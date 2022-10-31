@@ -7,6 +7,7 @@ public class Ass2 {
 	@RequestMapping("/")
     public String hello() {
         return "Hello Human!!!";
+        
 }
 @RequestMapping("/hi")
 public String name(@RequestParam(value="name" ,required=false) String myname,@RequestParam(value="lastname" ,required=false) String lastname,@RequestParam(value="times" ,required=false) int times) {

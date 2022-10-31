@@ -8,11 +8,11 @@
 		<version>2.7.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spring.secandprojectass</groupId>
-	<artifactId>springsecondprojectass</artifactId>
+	<groupId>com.spring.secandprojectass1</groupId>
+	<artifactId>springsecondprojectass-1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>springsecondprojectass</name>
+	<name>springsecondprojectass-1</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -33,12 +33,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		        <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>jstl</artifactId>
-        </dependency>
-
-
 	</dependencies>
 
 	<build>
