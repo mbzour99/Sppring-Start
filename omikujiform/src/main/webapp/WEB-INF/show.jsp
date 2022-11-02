@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<!-- New line below to use the JSP Standard Tag Library -->
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>${number}</h1>
+<h1><% session.getAttribute("city"); %></h1>
+<h1><% session.getAttribute("person"); %></h1>
+<h1><% session.getAttribute("pref"); %></h1>
+<h1><% session.getAttribute("thing"); %></h1>
+<h1><% session.getAttribute("des"); %></h1>
+<a href="/omikuji">Go back</a>
 
 </body>
 </html>
