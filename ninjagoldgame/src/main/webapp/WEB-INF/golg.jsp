@@ -52,7 +52,7 @@
                 
         </div>
         <div class="activity_log">
-                <p>Activity log:</p>
+                <p>Activites</p>
                 <div id="text_area">
                   <c:forEach items="${eventLog}" var="event">
                   	<c:out value="${event}" escapeXml="false"></c:out>
