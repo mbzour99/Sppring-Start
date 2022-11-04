@@ -8,10 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1><%="${mybook.getTitle()}" %></h1>
-<h2>Description <%="${mybook.getDescription()}" %></h2>
-<h2>Language <%="${mybook.getLanguage()}" %>></h2>
-<h2>Number of Pages <%="${mybook.getNumberOfPages()}" %>></h2>
+<h1><c:out value="${mybook.getTitle()}"></c:out></h1>
+<h2>Description <c:out value="${mybook.getDescription()}"></c:out></h2>
+<h2>Language <c:out value="${mybook.getLanguage()}"></c:out>></h2>
+<h2>Number of Pages <c:out value="${mybook.getNumberOfPages()}"></c:out></h2>
 
 </body>
 </html>
