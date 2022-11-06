@@ -4,12 +4,12 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.spring.mvc.savetravels.models.Travel;
+import com.spring.mvc.savetravels.models.Lang;
 
 @Repository
-public interface TravelsRepo extends CrudRepository<Travel, Long>{
+public interface LangRepo extends CrudRepository<Lang, Long>{
  // this method retrieves all the books from the database
- List<Travel> findAll();
+ List<Lang> findAll();
 // // this method finds books with descriptions containing the search string
 // List<Travel> findByDescriptionContaining(String search);
 // // this method counts how many titles contain a certain string

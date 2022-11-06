@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.spring.mvc.languages.models.Lang;
 
 public interface LangRepo  extends CrudRepository<Lang, Long>{
-	  List<Lang> findall();
+	  List<Lang> findAll();
 	  
 
 }

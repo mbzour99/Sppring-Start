@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring.mvc.savetravels.models.Travel;
+import com.spring.mvc.savetravels.models.Lang;
 import com.spring.mvc.savetravels.serveses.TravelServ;
 
 import java.util.List;
@@ -29,12 +29,12 @@ public class TravelsApi {
 	 }
 	 
     @GetMapping("/new")
-    public String newtravel(@ModelAttribute("travel") Travel travel,Model model) {
+    public String newtravel(@ModelAttribute("travel") Lang travel,Model model) {
     	model.addAttribute("travels",travelsServ.allTravels());
         return "savet.jsp";
     }
     @PostMapping("/new")
-    public String createme(@Valid @ModelAttribute("travel") Travel travel, BindingResult result) {
+    public String createme(@Valid @ModelAttribute("travel") Lang travel, BindingResult result) {
         if (result.hasErrors()) {
             return "savet.jsp";
         } else {
@@ -45,19 +45,19 @@ public class TravelsApi {
     }
     @GetMapping("/expenses/{id}")
     public String show(@PathVariable("id") Long id, Model model) {
-        Travel travel = travelsServ.findTravel(id);
+        Lang travel = travelsServ.findTravel(id);
         model.addAttribute("travel", travel);
         return "delete.jsp";
     }
     @GetMapping("/expenses/edit/{id}")
     public String edit(@PathVariable("id") Long id, Model model) {
-        Travel travel = travelsServ.findTravel(id);
+        Lang travel = travelsServ.findTravel(id);
         model.addAttribute("travel", travel);
         return "edit.jsp";
     }
     
     @PutMapping("/expenses/edit/{id}")
-    public String update(@Valid @ModelAttribute("travel") Travel travel, BindingResult result,@PathVariable("id")Long id) {
+    public String update(@Valid @ModelAttribute("travel") Lang travel, BindingResult result,@PathVariable("id")Long id) {
         if (result.hasErrors()) {
             return "edit.jsp";
         } else {

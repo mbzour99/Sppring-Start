@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name="travels")
-public class Travel {
+public class Lang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -49,13 +49,13 @@ public class Travel {
     private Date updatedAt;
     
    
-	public Travel( String expense, String vendor, Double amount,String description) {
+	public Lang( String expense, String vendor, Double amount,String description) {
 		this.expense = expense;
 		this.vendor = vendor;
 		this.amount = amount;
 		this.description=description;
 	}
-     public Travel() {
+     public Lang() {
     	 
      }
 	public Long getId() {

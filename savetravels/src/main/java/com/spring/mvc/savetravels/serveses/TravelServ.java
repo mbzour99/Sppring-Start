@@ -5,31 +5,31 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.spring.mvc.savetravels.models.Travel;
-import com.spring.mvc.savetravels.repository.TravelsRepo;
+import com.spring.mvc.savetravels.models.Lang;
+import com.spring.mvc.savetravels.repository.LangRepo;
 
 //import antlr.collections.List;
 import java.util.List;
 @Service
 public class TravelServ {
 
-private final TravelsRepo travelsRepo;
+private final LangRepo travelsRepo;
 
- public TravelServ(TravelsRepo travelsRepo) {
+ public TravelServ(LangRepo travelsRepo) {
      this.travelsRepo = travelsRepo;
  }
  // returns all the books
- public List<Travel> allTravels() {
+ public List<Lang> allTravels() {
      return travelsRepo.findAll();
  }
 
- public void createTravel(Travel b) {
+ public void createTravel(Lang b) {
 	 
     travelsRepo.save(b);
  }
 
- public Travel updateTravel(Long id,Travel expense) {
-	    Travel toUpdate= findTravel(id);
+ public Lang updateTravel(Long id,Lang expense) {
+	    Lang toUpdate= findTravel(id);
 	    toUpdate.setAmount(expense.getAmount());
 	    toUpdate.setDescription(expense.getDescription());;
 	    toUpdate.setExpense(expense.getExpense());;
@@ -41,8 +41,8 @@ private final TravelsRepo travelsRepo;
 	 travelsRepo.deleteById(id);
  }
  // retrieves a book
- public Travel findTravel(Long id) {
-     Optional<Travel> optionalTravel = travelsRepo.findById(id);
+ public Lang findTravel(Long id) {
+     Optional<Lang> optionalTravel = travelsRepo.findById(id);
      if(optionalTravel.isPresent()) {
          return optionalTravel.get();
      } else {
