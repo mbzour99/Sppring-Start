@@ -22,13 +22,14 @@ public class ProductAndCategoryCont {
 	public ProductAndCategoryCont(ProductCategortServ productService) {
 		this.productService = productService;
 	}
-
+	
 	@GetMapping("/")
 	public String homeshow(Model model) {
 		model.addAttribute("products",productService.allProducts());
 		model.addAttribute("categories",productService.allCatergories());
 		return "home.jsp";
 	}
+	
 	@GetMapping("/products/new")
 	public String newProduct(@ModelAttribute("product")Product product) {
 		return "addProduct.jsp";

@@ -34,9 +34,9 @@ public String notHere() {
 public String addDojo(@ModelAttribute("dojo") Dojo dojo) {
 	return"newdojo.jsp";
 }
-
 @PostMapping("/dojo/new")
 public String processAddDojo(@Valid @ModelAttribute("dojo")Dojo dojo,BindingResult result) {
+
 	if (result.hasErrors()) {
 		return "newdojo.jsp";
 	}
@@ -44,6 +44,7 @@ public String processAddDojo(@Valid @ModelAttribute("dojo")Dojo dojo,BindingResu
 		ninjaAndDojoServ.addDojo(dojo);
 		return "redirect:/ninja/new";
 	}
+
 }
 
 @GetMapping("/ninja/new")

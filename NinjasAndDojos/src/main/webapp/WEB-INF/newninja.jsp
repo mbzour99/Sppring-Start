@@ -18,6 +18,7 @@
 	
 	<form:form action="/ninja/new" method="POST" modelAttribute="ninja">
 		<p>
+
 			<form:label  path="dojo">Dojo</form:label>
 			<form:select  path="dojo">
 				<c:forEach items="${dojos}" var="dojo">

@@ -26,7 +26,7 @@
 <td>
 <ul>
 <c:forEach items="${products}" var="prod">
-<li><c:out value="${prod.getName()}"></c:out></li>
+<li><a href="/products/${prod.id}"><c:out value="${prod.getName()}"></c:out></a></li>
 </c:forEach>
 
 </ul>
@@ -34,7 +34,7 @@
 <td>
 <ul>
 <c:forEach items="${categories}" var="cat">
-<li><c:out value="${cat.getName()}"></c:out></li>
+<li><a href="/categories/${cat.id}"><c:out value="${cat.getName()}"></c:out></a></li>
 </c:forEach>
 
 </ul>
