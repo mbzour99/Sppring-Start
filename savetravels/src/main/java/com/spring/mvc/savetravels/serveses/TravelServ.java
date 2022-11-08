@@ -23,6 +23,7 @@ private final LangRepo travelsRepo;
      return travelsRepo.findAll();
  }
 
+
  public void createTravel(Lang b) {
 	 
     travelsRepo.save(b);

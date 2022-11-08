@@ -33,9 +33,11 @@ public class TravelsApi {
     	model.addAttribute("travels",travelsServ.allTravels());
         return "savet.jsp";
     }
+    
     @PostMapping("/new")
-    public String createme(@Valid @ModelAttribute("travel") Lang travel, BindingResult result) {
+    public String createme(Model model,@Valid @ModelAttribute("travel") Lang travel, BindingResult result) {
         if (result.hasErrors()) {
+          	model.addAttribute("travels",travelsServ.allTravels());
             return "savet.jsp";
         } else {
         	travelsServ.createTravel(travel);

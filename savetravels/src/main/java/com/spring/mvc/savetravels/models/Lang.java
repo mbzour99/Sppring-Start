@@ -27,13 +27,7 @@ public class Lang {
     @NotNull
     @Size(min = 5, max = 200,message="The description length must be btween 5 to 200")
     private String description;
-    public String getDescription() {
-		return description;
-	}
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
 	@NotNull
     @Size(min = 5, max = 200,message="The expense length must be btween 5 to 200")
     private String vendor;
@@ -61,7 +55,13 @@ public class Lang {
 	public Long getId() {
 		return id;
 	}
+    public String getDescription() {
+		return description;
+	}
 
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	public String getExpense() {
 		return expense;
 	}
