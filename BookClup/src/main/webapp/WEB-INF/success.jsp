@@ -23,15 +23,15 @@
     <th>Psoted By</th>
     <th>Action</th>
   </tr>
- <c:forEach var="book" items="${loggedUser.getBooks()}">
+ <c:forEach var="book" items="${allbooks}">
   <tr>
   
  <td><c:out  value="${book.id}"></c:out></td>
- <td><a href="/books/${book.id}"><c:out  value="${book.name}"></c:out></a></td>
- <td></td><c:out  value="${book.authorName}"></c:out></td>
+ <td><a href="/books/${book.id}/edit"><c:out  value="${book.name}"></c:out></a></td>
+ <td><c:out  value="${book.authorName}"></c:out></td>
  <td><c:out value="${book.posterBy}"></c:out></td>
  
- <td><form action="/expenses/${book.id}" method="post">
+ <td><form action="/delete/${book.id}" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete">
 </form>

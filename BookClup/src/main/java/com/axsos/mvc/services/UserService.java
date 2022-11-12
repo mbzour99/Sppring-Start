@@ -53,6 +53,8 @@ public class UserService {
 		User uuu=(User) s.getAttribute("user_object");
 //		Long nyid=uuu.getId();
 		book.setUser(uuu);
+		book.setPosterBy(uuu.getUsername());
+		
 		bookRepo.save(book);
 		
 	}
@@ -104,5 +106,17 @@ public class UserService {
         else {
         	return userIfFound.get();
         }
+    }
+    public Book updateBook(Long id,Book mbook) {
+	    Book mmbook=findBookById(id);
+	    mmbook.setAuthorName(mbook.getAuthorName());
+	    mmbook.setName(mbook.getName());
+	    mmbook.setThought(mbook.getThought());
+	    bookRepo.save(mmbook);
+	    return null;
+	}
+    public void deletem(Long id) {
+    	bookRepo.deleteById(id);
+    
     }
 }

@@ -1,7 +1,5 @@
 package com.axsos.mvc.controllers;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -9,9 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.axsos.mvc.models.Book;
 import com.axsos.mvc.models.LoginUser;
@@ -80,6 +81,9 @@ public class MainController {
 	@GetMapping("/success")
 	public String sucesspage(HttpSession session, Model model) {
 		model.addAttribute("loggedUser",session.getAttribute("user_object"));
+		model.addAttribute("allbooks",userServ.findAllBooks());
+//		User u=(User)session.getAttribute("user_object");
+//		System.out.println(u.getBooks().get(0));
 //		model.addAttribute("user",session.getAttribute("user_object"));
 		return "success.jsp";
 	}
@@ -109,5 +113,25 @@ public class MainController {
 		return "redirect:/success";
 		
 	}
+	@GetMapping("/books/{id}")
+	public String aaal(@ModelAttribute("editbook") Book book,Model model,@PathVariable("id") Long id) {
+		Book b=userServ.findBookById(id);
+		model.addAttribute("mbook",b);
+		return"edit.jsp";
+	}
+	@PutMapping("/books/{id}/edit")
+	public String updateme(@Valid @ModelAttribute("editbook")Book b, @PathVariable("id") Long id,BindingResult re) {
+		if(re.hasErrors()) {
+			return"edit.jsp";
+		}
+		userServ.updateBook(id, b);
+	return "redirect:/success";
+	}
 	
+	@DeleteMapping("/delete/{id}")
+	public String deletem(@PathVariable("id")Long id) {
+		userServ.deletem(id);
+		return "redirect:/success";
+	}
+
 }
