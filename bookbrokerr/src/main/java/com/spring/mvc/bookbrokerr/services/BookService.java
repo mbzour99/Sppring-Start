@@ -21,8 +21,12 @@ public class BookService {
 		return bookRepo.findAll();
 	}
 	
+//	public List<Book> unborrowedBooks(User user){
+//		return bookRepo.findByBorrowerIdIsOrUserIdIs(null, user.getId());
+//	}
+	
 	public List<Book> unborrowedBooks(User user){
-		return bookRepo.findByBorrowerIdIsOrUserIdIs(null, user.getId());
+		return bookRepo.findByBorrowerIdIs(null);
 	}
 	
 	public List<Book> borrowedBooks(User user){

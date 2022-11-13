@@ -3,6 +3,7 @@ package com.spring.mvc.projectmanager.servecies;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.mvc.projectmanager.models.Project;
@@ -11,11 +12,8 @@ import com.spring.mvc.projectmanager.repositores.ProjectRepo;
 
 @Service
 public class ProjectService {
-	private final ProjectRepo projectRepo;
-	
-	public ProjectService(ProjectRepo projectRepo) {
-		this.projectRepo = projectRepo;
-	}
+@Autowired
+ProjectRepo projectRepo;
 	
 	public List<Project> allProjects(){
 		return projectRepo.findAll();
